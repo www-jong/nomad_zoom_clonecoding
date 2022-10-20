@@ -1,0 +1,36 @@
+WebSocket vs Http
+- 둘다 Protocol
+
+Http
+- User의 request, server의 response
+- stateless, backend가 User를 기억할 수 없음-> User와 backend사이의 연결이 없음
+- request와 response과정 뒤에 backend는 유저를 잊음
+- real-time이 아님.(request가 있어야 response가 있음)
+
+WebSocket
+- 서버가 지원하면 https:// 대신 wss:// 을 이용해도 됨
+- User가 websocket request를 보내면 서버가 받거나 거절을 함
+- 서버가 수락할 경우 연결이 됨(Connect), 서버가 User를 기억함
+- 연결이 되있을 경우, 서버가 User에게 request없이 response를 보낼 수 있음
+- 양방향 연결임
+
+
+실행
+npm run dev
+
+
+
+----
+ws (websocket)설치
+-npm i ws
+이후, express에서 http 대신 ws으로 변경해주어야함
+기존
+const handleListen = () => console.log('Listening one http://localhost:3000');
+app.listen(3000,handleListen);
+-----
+변경 후
+
+--
+
+front - app.js
+back - server.js
